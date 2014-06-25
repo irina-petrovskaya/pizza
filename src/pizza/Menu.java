@@ -2,6 +2,7 @@ package pizza;
 
 import java.awt.*;
 import java.awt.event.*;
+
 /*
 * руководство пользователя:
 * 1. заполните поля - район, адрес, телефон, время
@@ -120,9 +121,9 @@ public class Menu extends Frame {
         amount_area.setEditable(false);
         amount_area.setBounds(900, 40, 250, 220);
         add(amount_area);
-        order_area = new TextArea("",5,50,TextArea.SCROLLBARS_NONE);
+        order_area = new TextArea("", 5, 50, TextArea.SCROLLBARS_NONE);
         order_area.setEditable(false);
-        order_area.setBounds(900,280,250,350);
+        order_area.setBounds(900, 280, 250, 350);
         order_area.setVisible(false);
         add(order_area);
 
@@ -242,6 +243,7 @@ public class Menu extends Frame {
         order_text = "Ваш заказ:\n";
         order_area.setVisible(false);
     }
+
     /* класс следит за списком и запоминает индекс выбранной пиццы */
     class PizzaSelector implements ItemListener {
         public void itemStateChanged(ItemEvent ie) {
@@ -327,15 +329,15 @@ public class Menu extends Frame {
             leaders[selected_pizza_index]++;
             order_total = order_total + selected_pizza_price;
             amount_area.setText("Количество позиций: " + "\n"
-                            + " Калифорния - " + pizza_amounts[0] + " ("+pizza_prices[0]*pizza_amounts[0]+ " руб)\n"
-                            + " Аляска - " + pizza_amounts[1] + " ("+pizza_prices[1]*pizza_amounts[1]+ " руб)\n"
-                            + " Черри - " + pizza_amounts[2] + " ("+pizza_prices[2]*pizza_amounts[2]+ " руб)\n"
-                            + " Хиноки - " + pizza_amounts[3] + " ("+pizza_prices[3]*pizza_amounts[3]+ " руб)\n"
-                            + " Пицца 4 сыра - " + pizza_amounts[4] + " ("+pizza_prices[4]*pizza_amounts[4]+ " руб)\n"
-                            + " Пицца Класс - " + pizza_amounts[5] + " ("+pizza_prices[5]*pizza_amounts[5]+ " руб)\n"
-                            + " Пицца Гавайская - " + pizza_amounts[6] + " ("+pizza_prices[6]*pizza_amounts[6]+ " руб)\n"
-                            + " Пицца Мексиканская - " + pizza_amounts[7] + " ("+pizza_prices[7]*pizza_amounts[7]+ " руб)\n"
-                            + " Пицца Петровская - " + pizza_amounts[8] + " ("+pizza_prices[8]*pizza_amounts[8]+ " руб)\n"
+                            + " Калифорния - " + pizza_amounts[0] + " (" + pizza_prices[0] * pizza_amounts[0] + " руб)\n"
+                            + " Аляска - " + pizza_amounts[1] + " (" + pizza_prices[1] * pizza_amounts[1] + " руб)\n"
+                            + " Черри - " + pizza_amounts[2] + " (" + pizza_prices[2] * pizza_amounts[2] + " руб)\n"
+                            + " Хиноки - " + pizza_amounts[3] + " (" + pizza_prices[3] * pizza_amounts[3] + " руб)\n"
+                            + " Пицца 4 сыра - " + pizza_amounts[4] + " (" + pizza_prices[4] * pizza_amounts[4] + " руб)\n"
+                            + " Пицца Класс - " + pizza_amounts[5] + " (" + pizza_prices[5] * pizza_amounts[5] + " руб)\n"
+                            + " Пицца Гавайская - " + pizza_amounts[6] + " (" + pizza_prices[6] * pizza_amounts[6] + " руб)\n"
+                            + " Пицца Мексиканская - " + pizza_amounts[7] + " (" + pizza_prices[7] * pizza_amounts[7] + " руб)\n"
+                            + " Пицца Петровская - " + pizza_amounts[8] + " (" + pizza_prices[8] * pizza_amounts[8] + " руб)\n"
             );
             liders_area.setText("Лидеры продаж: " + "\n"
                             + " Калифорния - " + leaders[0] + "\n"
@@ -361,11 +363,11 @@ public class Menu extends Frame {
             total = total + order_total;
             total_sum_area.setText("Сумма заказа с доставкой: " + order_total + " рублей \n" + "Общая сумма заказов: " + total);
             System.arraycopy(leaders, 0, saved_leaders, 0, leaders.length); // сохраняем таблицу лидеров
-            order_text=order_text+"Адрес доставки:  "+address_field.getText()+"\n"
-                                 +"Телефон:"+phone_field.getText()+"\n"
-                                 +"Время доставки:"+time_field.getText()+"\n"
-                                 +"\n"+amount_area.getText()+"\n"
-                                 +"Сумма заказа: "+order_total+"\n";
+            order_text = order_text + "Адрес доставки:  " + address_field.getText() + "\n"
+                    + "Телефон:" + phone_field.getText() + "\n"
+                    + "Время доставки:" + time_field.getText() + "\n"
+                    + "\n" + amount_area.getText() + "\n"
+                    + "Сумма заказа: " + order_total + "\n";
             // Текстовая область становится видимой и отображает текст заказа
             order_area.setText(order_text);
             order_area.setVisible(true);
